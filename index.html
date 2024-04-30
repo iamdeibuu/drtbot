@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .chat-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chat-area {
+        height: 300px;
+        overflow-y: scroll;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .user-message, .bot-message {
+        margin: 5px 0;
+    }
+    .user-message {
+        text-align: right;
+        color: #007bff;
+    }
+    .bot-message {
+        text-align: left;
+        color: #28a745;
+    }
+    input[type="text"] {
+        width: calc(100% - 60px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="chat-area" id="chatArea">
+        <div class="bot-message">Hello! How can I assist you today?</div>
+    </div>
+    <div>
+        <input type="text" id="userInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<script>
+    function sendMessage() {
+        var userInput = document.getElementById("userInput").value;
+        var chatArea = document.getElementById("chatArea");
+        
+        // Display user message
+        var userMessage = document.createElement("div");
+        userMessage.className = "user-message";
+        userMessage.textContent = userInput;
+        chatArea.appendChild(userMessage);
+        
+        // Simulate bot response (replace with actual AI response)
+        var botMessage = document.createElement("div");
+        botMessage.className = "bot-message";
+        botMessage.textContent = "I'm sorry, I'm just a demo bot and can't provide real responses.";
+        chatArea.appendChild(botMessage);
+        
+        // Scroll to the bottom of the chat area
+        chatArea.scrollTop = chatArea.scrollHeight;
+        
+        // Clear the user input field
+        document.getElementById("userInput").value = "";
+    }
+</script>
+</body>
+</html>
